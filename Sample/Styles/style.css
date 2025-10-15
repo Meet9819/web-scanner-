@@ -5,16 +5,16 @@ html, body { margin: 0; padding: 0; height: 100%; background: #E4E4E4; font-fami
 img { vertical-align: middle; border: 0;}
 p { margin: 0; padding: 0; }
 a:link, a:visited { color: #606060; text-decoration: none; }
-a:hover { color: #fe8e14; }
+a:hover { color: #0d75b8; }
 input { color: #444; font-weight: normal; }
 input.invalid { background-color: #FF9; border: 2px red inset; }
 a img { border: none; }
 a img:hover { border: none; }
 ul { list-style: none; padding: 0; margin: 0; }
 .tc { text-align: center; }
-.btnOrg { font-family:Oswald-Regular;padding: 0 15px; color: #fff; background: #FE8E14 0% 0% no-repeat padding-box; border: none; outline: none; cursor: pointer; -webkit-transition: all .2s ease-in-out; -moz-transition: all .2s ease-in-out; -ms-transition: all .2s ease-in-out; -o-transition: all .2s ease-in-out; transition: all .2s ease-in-out; margin-right: 15px;}
+.btnOrg { font-family:Oswald-Regular;padding: 0 15px; color: #fff; background: #0d75b8 0% 0% no-repeat padding-box; border: none; outline: none; cursor: pointer; -webkit-transition: all .2s ease-in-out; -moz-transition: all .2s ease-in-out; -ms-transition: all .2s ease-in-out; -o-transition: all .2s ease-in-out; transition: all .2s ease-in-out; margin-right: 15px;}
 .btnOrg:hover { background: #FEA543; }
-.btnLoadAndSave { font-family:Oswald-Regular;float: right;position: relative;margin-top: 10px;cursor: pointer;letter-spacing: 0px;color: #FE8E14;text-transform: uppercase;}
+.btnLoadAndSave { font-family:Oswald-Regular;float: right;position: relative;margin-top: 10px;cursor: pointer;letter-spacing: 0px;color: #0d75b8;text-transform: uppercase;}
 .ds-dwt-loaderBar img { margin-top: 60px; }
 @keyframes fade {50% {opacity: 0.4;}} 
 .dynamsoft-dwt-selected {background-color: #666;box-shadow: -3px -3px 2px -2px inset #b7aaaa, 2px 2px 2px 0px inset #000000;padding: 3px;}
@@ -74,14 +74,14 @@ select#Resolution { margin-left: 3px; width: 192px; height: 26px; }
 #divProductDetail li label input { width: 15px; height: 15px; vertical-align: middle; }
 #divProductDetail li .lblPixelType { display: inline-block; margin: 0 25px 0 0; }
 .btnScanGray { font-family:Oswald-Regular;margin-top: 5px; border: none; background: #ddd; cursor: pointer;outline: none;letter-spacing: 0px;color: #FFFFFF;text-transform: uppercase;}
-.btnScanActive {background: 0% 0% no-repeat padding-box padding-box rgb(254, 142, 20);}
-.btnScanActive:hover { background: #ffae38; }
+.btnScanActive {    background: 0% 0% no-repeat padding-box padding-box #50a8e1; }
+.btnScanActive:hover { background: #0d75b8; }
 #div_LoadLocalImage input[type="button"] { margin: 15px 0; width: 90px; height: 30px; }
 
 #divNoScanners {position: absolute;top:70px;z-index: 1;padding: 30px 0;line-height:30px;text-align: left;background: #606060 0% 0% no-repeat padding-box;}
 #divNoScanners > a { position: absolute; top: 15px; right: 15px; text-decoration: none; }
-#divNoScanners a { color: #FE8E14; }
-#divNoScanners a:hover { color: #ffae38;}
+#divNoScanners a { color: #0d75b8; }
+#divNoScanners a:hover { color: #0d75b8;}
 #divNoScanners .imgClose { margin: 0 15px 0 0; }
 #divNoScanners .spanContent { letter-spacing: 0px;color: #FFFFFF; width: 250px;float: left; margin-left:20px }
 #divNoScanners .contentTitle { font-family:Oswald-Regular;line-height: 20px; }
@@ -108,9 +108,9 @@ select#Resolution { margin-left: 3px; width: 192px; height: 26px; }
 
 .dynamsoft-dwt-dialog-body { border: 1px solid rgb(204, 204, 204); background-color: #FFFFFF;}
 .dynamsoft-dwt-header {background: #323234 0% 0% no-repeat padding-box;height: 15px;margin-bottom: 30px; }
-.ds-dwt-ui-dlg-wrap .button-yes {width: 100px; margin-bottom: 20px;height: 42px; font-size:16px;line-height:30px; letter-spacing: 0px;color: #FFFFFF;text-transform: uppercase;background: #FE8E14 0% 0% no-repeat padding-box;border: none;cursor: pointer;margin-right: 23px;}
-.ds-dwt-ui-dlg-wrap .button-yes:hover { background: #ffae38; }
-.ds-dwt-ui-dlg-wrap .button-no { border: 2px solid #FE8E14; font-size:16px;line-height:30px; letter-spacing: 0px;color: #FE8E14;text-transform: uppercase;background: #FFFFFF;width: 100px;height: 42px;cursor: pointer;}
+.ds-dwt-ui-dlg-wrap .button-yes {width: 100px; margin-bottom: 20px;height: 42px; font-size:16px;line-height:30px; letter-spacing: 0px;color: #FFFFFF;text-transform: uppercase;background: #0d75b8 0% 0% no-repeat padding-box;border: none;cursor: pointer;margin-right: 23px;}
+.ds-dwt-ui-dlg-wrap .button-yes:hover { background: #0d75b8; }
+.ds-dwt-ui-dlg-wrap .button-no { border: 2px solid #0d75b8; font-size:16px;line-height:30px; letter-spacing: 0px;color: #0d75b8;text-transform: uppercase;background: #FFFFFF;width: 100px;height: 42px;cursor: pointer;}
 .dynamsoft-dwt-showMessage { margin-top: 15px;   }
 .dynamsoft-dwt-showMessage-detail { margin-left: 125px;text-align: left; line-height:30px; letter-spacing: 0px;color: #323234;}
 #showMessage {margin-right: 5px; width: 14px;height: 14px; vertical-align: middle;}
@@ -128,8 +128,8 @@ select#Resolution { margin-left: 3px; width: 192px; height: 26px; }
 #resultWrap table {border-collapse: collapse; border-spacing: 0; width: 100%; display: table}
 #resultWrap table, th, td { border: none}
 /*#resultWrap a { color: #606060; text-decoration: none; background-color: transparent;}*/
-#resultWrap a {cursor: pointer; line-height:17px; letter-spacing: 0px;color: #FE8E14;}
-#resultWrap a:hover { color: #ffae38;}
+#resultWrap a {cursor: pointer; line-height:17px; letter-spacing: 0px;color: #0d75b8;}
+#resultWrap a:hover { color: #0d75b8;}
 #resultWrap tr td:nth-child(2) span {display: inline-block;width: 4px;height: 17px;color: #ccc;overflow: hidden;}
 #DWTdivMsg {padding: 6px 0 0 8px;margin-top: 10px;overflow-y: scroll;background: #F5F5F5 0% 0% no-repeat padding-box; line-height:17px;  border-top: solid 4px #323234;}
 .lblMessage {text-align: left; line-height:21px; letter-spacing: 0px;color: #323234;}
@@ -430,7 +430,7 @@ html,body { font-size: 12px; }
       font-size: 50px;
       height: 120px;
       padding-top: 30px;
-      border: solid 6px #fe8e14;
+      border: solid 6px #0d75b8;
   }
 
   .divType, #ScanWrapper .toggle, .tabList {
