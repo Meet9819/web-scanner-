@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head> 
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+  <link href="Styles/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+   
+ 
+  <div class="ds-dwt-content ds-dwt-center">
+    <div id="DWTcontainerTop">
+      <div id="divEdit">
+        <ul class="operateGrp">
+          <li>
+            <div class="menuIcon RemoveSelectedImages" style="margin-left: 5px;" title="Remove current page"
+              alt="Remove current page" id="DW_btnRemoveCurrentImage" onclick="btnRemoveCurrentImage_onclick();"></div>
+          </li>
+          <li>
+            <div class="menuIcon RemoveAllImages" title="Remove all pages" alt="Remove all pages"
+              id="DW_btnRemoveAllImages" onclick="btnRemoveAllImages_onclick();"></div>
+          </li>
+          <li style="width:90px;"></li>
+          <li class="lblShowCurrentImage"><input type="text" size="2" id="DW_CurrentImage" readonly="readonly">/<input
+              type="text" size="2" id="DW_TotalImage" readonly="readonly"></li>
+          <li class="lblZoom">
+            <ul>
+              <li style="width:25%">
+                <div class="menuIcon ZoomOut" title="Zoom out" alt="Zoom out" id="btnZoomOut"
+                  onclick="btnZoomOut_onclick();"></div>
+              </li>
+              <li style="width:50%"><input type="text" id="DW_spanZoom" readonly="readonly"></li>
+              <li style="width:25%">
+                <div class="menuIcon ZoomIn" title="Zoom in" alt="Zoom in" id="btnZoomIn"
+                  onclick="btnZoomIn_onclick();"></div>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div style="margin-left: 10px;" class="menuIcon OrigSize" title="1:1" alt="1:1" id="btnOrigSize"
+              onclick="btnOrigSize_onclick();"></div>
+            <div class="menuIcon FitWindow" title="Fit To Window" alt="Fit To Window" id="btnFitWindow"
+              style="display:none" onclick="btnFitWindow_onclick()"></div>
+          </li>
+          <li style="width:50px;"></li>
+          <li>
+            <div class="menuIcon RotateLeft" title="Rotate left" alt="Rotate left" id="btnRotateL"
+              onclick="btnRotateLeft_onclick()"></div>
+          </li>
+          <li>
+            <div class="menuIcon grayimg Crop" title="Please select an area to crop."
+              alt="Please select an area to crop." id="btnCropGray"></div>
+            <div class="menuIcon Crop" title="Crop" alt="Crop" id="btnCrop" style="display:none"
+              onclick="btnCrop_onclick();"></div>
+          </li>
+          <li>
+            <div class="menuIcon ShowEditor" title="Show image editor" alt="Show image editor" id="btnShowImageEditor"
+              onclick="btnShowImageEditor_onclick();"></div>
+          </li>
+          <li style="margin-top:0">
+            <div class="menuIcon SelectSelected" title="Select" alt="Select" id="btnSelect_selected"></div>
+            <div class="menuIcon Select" style="display:none;" title="Select" alt="Select" id="btnSelect"
+              onclick="btnSelect_onclick();"></div>
+          </li>
+          <li style="margin-top:0">
+            <div class="menuIcon HandSelected" style="display:none;" title="Hand" alt="Hand" id="btnHand_selected">
+            </div>
+            <div class="menuIcon Hand" title="Hand" alt="Hand" id="btnHand" onclick="btnHand_onclick();"></div>
+          </li>
+        </ul>
+      </div>
+      <div id="dwtcontrolContainer"></div>
+    </div>
+    <div id="ScanWrapper">
+      <div id="divScanner" class="divinput">
+        <ul>
+          <li>
+            <div class="divType">
+              Custom Scan
+            </div>
+            <div id="div_ScanImage" class="divTableStyle">
+              <ul id="ulScaneImageHIDE">
+                <li>
+                  <label for="source">
+                    <p>Select Source:</p>
+                  </label>
+                  <select size="1" id="source" style="position:relative;" onchange="source_onchange()">
+                    <option value=""></option>
+                  </select>
+                </li>
+                <li id="divProductDetail">
+                  <ul id="divTwainType">
+                    <li>
+                      <label style="width: 165px;" id="lblShowUI" for="ShowUI"><input type="checkbox" id="ShowUI" />Show
+                        Scanner UI&nbsp;</label>
+                      <label for="ADF"><input type="checkbox" id="ADF" />Use ADF&nbsp;</label></li>
+                    <li><label style="width: 165px;" for="DiscardBlankPage"><input type="checkbox"
+                          id="DiscardBlankPage" />Auto Remove Blank Page</label>
+                      <label for="Duplex"><input type="checkbox" id="Duplex" />2-sided Scan</label></li>
+                    <li>
+                      <span>Pixel Type:</span>
+                      <label for="BW" style="margin-left:5px;" class="lblPixelType"><input type="radio" id="BW"
+                          name="PixelType" />B&amp;W </label>
+                      <label for="Gray" class="lblPixelType"><input type="radio" id="Gray"
+                          name="PixelType" />Gray</label>
+                      <label for="RGB" class="lblPixelType"><input type="radio" id="RGB"
+                          name="PixelType" />Color</label></li>
+                    <li>
+                      <span>Resolution:</span><select size="1" id="Resolution">
+                        <option value="100">100</option>
+                        <option value="150">150</option>
+                        <option value="200" selected>200</option>
+                        <option value="300">300</option>
+                      </select></li>
+                  </ul>
+                </li>
+                <li>
+                  <input id="btnScan" class="btnScanGray" disabled="disabled" type="button" value="Scan"
+                    onclick="acquireImage();" />
+                  <a id="btnLoad" class="btnLoadAndSave" onclick="return btnLoadImagesOrPDFs_onclick()">Import
+                    Local Images ></a>
+                </li>
+              </ul>
+
+              <br><Br>
+
+
+              <input style="padding: 15px;" type="button" class="uploadbutton" value="Upload" onclick="upload();" /> 
+ 
+
+              <div id="divNoScanners" style="visibility:hidden;">
+                <a href="javascript: void(0)" class="ClosetblLoadImage"><img class="imgClose" src="Images/Close.png"
+                    alt="Close" /></a>
+                <img src="Images/Warning.png" />
+                <span class="spanContent">
+                  <p class="contentTitle">No TWAIN compatible drivers detected</p>
+                  <p class="contentDetail">You can Install a Virtual Scanner:</p>
+                  <p class="contentDetail"><a id="samplesource32bit"
+                      href="https://download.dynamsoft.com/tool/twainds.win32.installer.2.1.3.msi">32-bit Sample
+                      Source</a> <a id="samplesource64bit" style="display:none;"
+                      href="https://download.dynamsoft.com/tool/twainds.win64.installer.2.1.3.msi">64-bit Sample
+                      Source</a> from <a target="_blank" href="http://www.twain.org">TWG</a></p>
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+ 
+      <div id="DWTdivMsg" class="clearfix">
+        <span class="lblMessage">Message:</span><br />
+        <div id="DWTemessage"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="Resources/dynamsoft.webtwain.config.js?t=170607"></script>
+  <script src="Resources/dynamsoft.webtwain.initiate.js?t=170607"></script>
+  <script src="Resources/addon/dynamsoft.webtwain.addon.pdf.js?t=170607"></script>
+
+  <script>
+             
+            function upload() {
+                alert("Upload triggered");
+
+                if (DWTObject && DWTObject.HowManyImagesInBuffer > 0) {
+                    var strUrl = "https://robustremedy.com/scanner/upload.php";
+                    var timestamp = new Date().toISOString().replace(/[\:\-\.T]/g, "").slice(0,14);
+
+                    for (var i = 0; i < DWTObject.HowManyImagesInBuffer; i++) {
+                        var pageFileName = "Scan_" + timestamp + "_page" + (i+1) + "_" + Math.floor(Math.random()*10000) + ".png";
+
+                        DWTObject.HTTPUpload(
+                            strUrl,
+                            [i], // upload each page
+                            Dynamsoft.DWT.EnumDWT_ImageType.IT_PNG,
+                            Dynamsoft.DWT.EnumDWT_UploadDataFormat.Binary,
+                            pageFileName,
+                            onEmptyResponse,
+                            onServerReturnedSomething
+                        );
+                    }
+                } else {
+                    alert("There is no image in buffer.");
+                }
+            }
+
+
+            function onEmptyResponse() {
+                alert("Upload successful");
+            }
+
+            function onServerReturnedSomething(errorCode, errorString, sHttpResponse) {
+                alert(sHttpResponse.length > 0 ? sHttpResponse : errorString);
+            }
+
+            function binarizeImage() {
+                DWTObject.ConvertToBW(DWTObject.CurrentImageIndexInBuffer);
+            }
+
+            function rotateCW() {
+                DWTObject.RotateRight(DWTObject.CurrentImageIndexInBuffer);
+            }
+
+            function rotateCCW() {
+                DWTObject.RotateLeft(DWTObject.CurrentImageIndexInBuffer);
+            }
+  </script>
+  <script src="Scripts/online_demo_operation.js?t=170607"></script>
+  <script src="Scripts/init.js?t=170607"></script>
+  <script>
+    window.onload = pageonload;
+  </script>
+</body>
+
+</html>
